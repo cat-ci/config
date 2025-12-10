@@ -1,43 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <style>
-            *{
-                font-family: 'JetBrains Mono', monospace;
-                color: #eee;
-            }
-            body{
-                margin: 0;
-                padding: 0;
-                height: 100vh;
-            }
-            main{
-                display: flex;
-                background-color: #1c1d1d;
-                padding: 5px;
-                font-size: 0.9rem;
-                height: 35px;
-            }
-            .border{
-                height: calc(100%);
-                background-color: #1c1d1d;
-            }
-        </style>
-    </head>
-    <body>
-        <main>
-            <div class="datentime tile">
-                <span class="day">10</span><span class="seperator">-</span><span class="time">12:00</span>
-            </div>
-            <div class="ram tile">
-                <span class="label">RAM:</span><span class="value">13%</span>
-            </div>
-            <div class="cpu tile">
-                <span class="label">CPU:</span><span class="value">5%</span>
-            </div>
-        </main>
-        <div class="border">
 
+<head>
+    <style>
+        * {
+            font-family: 'JetBrains Mono', monospace;
+            color: #eee;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 1080px;
+            width: 1920px;
+        }
+
+        main {
+            display: flex;
+            background-color: #1c1d1d;
+            padding: 5px;
+            font-size: 0.9rem;
+            height: 35px;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(https://assets.designtemplate.io/images/Grainy%20Textured%20Overlay%20for%20Vintage%20Film%20Effects-HD.webp);
+            background-size: 100px 100px;
+            opacity: 0.2;
+        }
+
+        .desktop {
+            height: calc(100% - 35px);
+            background-color: #1c1d1d;
+            position: relative;
+        }
+
+        .desktop::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(https://assets.designtemplate.io/images/Grainy%20Textured%20Overlay%20for%20Vintage%20Film%20Effects-HD.webp);
+            background-size: 100px 100px;
+            opacity: 0.2;
+            z-index: 10;
+        }
+
+        .wallpaper {
+            width: 98%;
+            height: 98%;
+            top: 4px;
+            border-radius: 10px;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .desktop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tile {
+            background-color: #3a3a3a;
+            border-radius: 5px;
+            height: 25px;
+            padding: 0 10px;
+            margin-right: 10px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #2a2a2a;
+            font-weight: bold;
+        }
+
+        .tile::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(https://assets.designtemplate.io/images/Grainy%20Textured%20Overlay%20for%20Vintage%20Film%20Effects-HD.webp);
+            background-size: 100px 100px;
+            opacity: 0.2;
+        }
+
+        .tiles {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .tiles li {
+            display: flex;
+            align-items: center;
+        }
+        .content{
+            position: relative;
+            z-index: 20;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <ul class="tiles">
+            <li class="left">
+
+            </li>
+            <li class="center">
+                <div class="datentime tile">
+                    <span class="day">10</span><span class="seperator">-</span><span class="time">12:00</span>
+                </div>
+            </li>
+            <li class="right">
+                <div class="ram tile">
+                    <span class="label">RAM:</span><span class="value">13%</span>
+                </div>
+                <div class="cpu tile">
+                    <span class="label">CPU:</span><span class="value">5%</span>
+                </div>
+            </li>
+        </ul>
+    </main>
+    <div class="desktop">
+        <img class="wallpaper" src="/linux/background/grain.png">
+        <div class="content">
+            <span>hello world!</span>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
