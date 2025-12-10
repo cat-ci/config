@@ -18,7 +18,7 @@
         main {
             display: flex;
             background-color: #1c1d1d;
-            padding: 5px;
+            padding: 5px 20px;
             font-size: 0.9rem;
             height: 35px;
             position: relative;
@@ -77,7 +77,6 @@
             border-radius: 5px;
             height: 25px;
             padding: 0 10px;
-            margin-right: 10px;
             position: relative;
             display: flex;
             align-items: center;
@@ -110,12 +109,48 @@
         .tiles li {
             display: flex;
             align-items: center;
+            gap: 10px;
         }
         .content{
             position: relative;
             z-index: 20;
             top: 0;
             left: 0;
+        }
+        .workspace {
+            display: flex;
+            align-items: center;
+        }
+        .workspace .label {
+            margin-right: 5px;
+        }
+        .workspace .radio {
+            width: 6px;
+            height: 6px;
+            border: 2px solid #eee;
+            border-radius: 50%;
+            margin: 0 3px;
+        }
+        .workspace .radio.checked {
+            background-color: #eee;
+        }
+        .spacer {
+            width: 100%;
+            display: flex;
+            justify-content: right;
+            padding: 10px;
+        }
+        .left, .center, .right {
+            width: fit-content;
+        }
+        .storage {
+            font-size: 0.8rem;
+            color: #6f8663;
+        }
+        .center{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
 </head>
@@ -124,19 +159,37 @@
     <main>
         <ul class="tiles">
             <li class="left">
-
+                <div class="workspace tile">
+                    <span class="label">WS:</span><div class="radio"></div><div class="radio checked"></div><div class="radio"></div><div class="radio"></div>  
+                </div>
+                <div class="server tile">
+                    <span class="label">SRV:</span><span class="value">Online</span>
+                </div>
             </li>
+            <div class="spacer">
+                <div class="storage">///3%</div>
+            </div>
             <li class="center">
                 <div class="datentime tile">
                     <span class="day">10</span><span class="seperator">-</span><span class="time">12:00</span>
                 </div>
             </li>
+            <div class="spacer"></div>
             <li class="right">
+                <div class="vol tile">
+                    <span class="label">VOL:</span><span class="value">75%</span>
+                </div>
                 <div class="ram tile">
                     <span class="label">RAM:</span><span class="value">13%</span>
                 </div>
                 <div class="cpu tile">
                     <span class="label">CPU:</span><span class="value">5%</span>
+                </div>
+                <div class="internet tile">
+                    <span class="label">IP:</span><span class="value">198.168.1.5</span>
+                </div>
+                <div class="power-opt tile">
+                    <span class="button">⏻</span>
                 </div>
             </li>
         </ul>
