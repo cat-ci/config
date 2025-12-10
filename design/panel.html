@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            *{
+                font-family: 'JetBrains Mono', monospace;
+                color: #eee;
+            }
+            body{
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+            }
+            main{
+                display: flex;
+                background-color: #1c1d1d;
+                padding: 5px;
+                font-size: 0.9rem;
+                height: 35px;
+            }
+            .border{
+                height: calc(100%);
+                background-color: #1c1d1d;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="datentime tile">
+                <span class="day">10</span><span class="seperator">-</span><span class="time">12:00</span>
+            </div>
+            <div class="ram tile">
+                <span class="label">RAM:</span><span class="value">13%</span>
+            </div>
+            <div class="cpu tile">
+                <span class="label">CPU:</span><span class="value">5%</span>
+            </div>
+        </main>
+        <div class="border">
+
+        </div>
+    </body>
+</html>
