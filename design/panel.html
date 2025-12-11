@@ -2,204 +2,306 @@
 <html lang="en">
 
 <head>
-    <style>
-        * {
-            font-family: 'JetBrains Mono', monospace;
-            color: #eee;
-        }
+  <style>
+    * {
+      font-family: 'JetBrains Mono', monospace;
+      color: #eee;
+    }
 
-        body {
-            margin: 0;
-            padding: 0;
-            height: 1080px;
-            width: 1920px;
-        }
+    body {
+      margin: 0;
+      padding: 0;
+      height: 1080px;
+      width: 1920px;
+    }
 
-        main {
-            display: flex;
-            background-color: #1c1d1d;
-            padding: 5px 20px;
-            font-size: 0.9rem;
-            height: 35px;
-            position: relative;
-            align-items: center;
-            justify-content: center;
-        }
+    main {
+      display: flex;
+      background-color: #1c1d1d;
+      padding: 5px 20px;
+      font-size: 0.9rem;
+      height: 35px;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+    }
 
-        main::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url(https://assets.designtemplate.io/images/Grainy%20Textured%20Overlay%20for%20Vintage%20Film%20Effects-HD.webp);
-            background-size: 100px 100px;
-            opacity: 0.2;
-        }
+    main::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(https://assets.designtemplate.io/images/Grainy%20Textured%20Overlay%20for%20Vintage%20Film%20Effects-HD.webp);
+      background-size: 100px 100px;
+      opacity: 0.2;
+    }
 
-        .desktop {
-            height: calc(100% - 35px);
-            background-color: #1c1d1d;
-            position: relative;
-        }
+    .desktop {
+      height: calc(100% - 35px);
+      background-color: #1c1d1d;
+      position: relative;
+    }
 
-        .desktop::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url(https://assets.designtemplate.io/images/Grainy%20Textured%20Overlay%20for%20Vintage%20Film%20Effects-HD.webp);
-            background-size: 100px 100px;
-            opacity: 0.2;
-            z-index: 10;
-        }
+    .desktop::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(https://assets.designtemplate.io/images/Grainy%20Textured%20Overlay%20for%20Vintage%20Film%20Effects-HD.webp);
+      background-size: 100px 100px;
+      opacity: 0.2;
+      z-index: 10;
+    }
 
-        .wallpaper {
-            width: 98%;
-            height: 98%;
-            top: 4px;
-            border-radius: 10px;
-            position: absolute;
-            z-index: 10;
-        }
+    .wallpaper {
+      width: 98%;
+      height: 98%;
+      top: 4px;
+      border-radius: 10px;
+      position: absolute;
+      z-index: 10;
+    }
 
-        .desktop {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .desktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .tile {
-            background-color: #3a3a3a;
-            border-radius: 5px;
-            height: 25px;
-            padding: 0 10px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 3px solid #2a2a2a;
-            font-weight: bold;
-        }
+    .tile {
+      background-color: #3a3a3a;
+      border-radius: 5px;
+      height: 25px;
+      padding: 0 10px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid #2a2a2a;
+      font-weight: bold;
+    }
 
-        .tile::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url(https://assets.designtemplate.io/images/Grainy%20Textured%20Overlay%20for%20Vintage%20Film%20Effects-HD.webp);
-            background-size: 100px 100px;
-            opacity: 0.2;
-        }
+    .tile::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(https://assets.designtemplate.io/images/Grainy%20Textured%20Overlay%20for%20Vintage%20Film%20Effects-HD.webp);
+      background-size: 100px 100px;
+      opacity: 0.2;
+    }
 
-        .tiles {
-            list-style: none;
-            display: flex;
-            padding: 0;
-            margin: 0;
-            flex: 1;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .tiles li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .content{
-            position: relative;
-            z-index: 20;
-            top: 0;
-            left: 0;
-        }
-        .workspace {
-            display: flex;
-            align-items: center;
-        }
-        .workspace .label {
-            margin-right: 5px;
-        }
-        .workspace .radio {
-            width: 6px;
-            height: 6px;
-            border: 2px solid #eee;
-            border-radius: 50%;
-            margin: 0 3px;
-        }
-        .workspace .radio.checked {
-            background-color: #eee;
-        }
-        .spacer {
-            width: 100%;
-            display: flex;
-            justify-content: right;
-            padding: 10px;
-        }
-        .left, .center, .right {
-            width: fit-content;
-        }
-        .storage {
-            font-size: 0.8rem;
-            color: #6f8663;
-        }
-        .center{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    </style>
+    .tiles {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+      flex: 1;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tiles li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .content {
+      position: relative;
+      z-index: 20;
+      top: 0;
+      left: 0;
+    }
+
+    .workspace {
+      display: flex;
+      align-items: center;
+    }
+
+    .workspace .label {
+      margin-right: 5px;
+    }
+
+    .workspace .radio {
+      width: 6px;
+      height: 6px;
+      border: 2px solid #eee;
+      border-radius: 50%;
+      margin: 0 3px;
+    }
+
+    .workspace .radio.checked {
+      background-color: #eee;
+    }
+
+    .spacer {
+      width: 100%;
+      display: flex;
+      justify-content: right;
+      padding: 10px;
+    }
+
+    .left,
+    .center,
+    .right {
+      width: fit-content;
+    }
+
+    .storage {
+      font-size: 0.8rem;
+      color: #859773;
+    }
+
+    .center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .green {
+      color: #859773;
+      white-space: none;
+      font-weight: 900;
+    }
+
+    .terminal img{
+      opacity: 0.9;
+      backdrop-filter: blur(10px);
+      margin-bottom: -230px;
+      margin-left: 970px;
+      border-radius: 10px;
+    }
+
+    .rofi-drun {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #1c1d1d;
+      width: 600px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+      font-size: 0.9rem;
+      z-index: 25;
+      padding: 5px 0;
+      border-radius: 5px;
+    }
+
+    .rofi-drun ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .rofi-drun .drun.input {
+      border-bottom: 1px dashed #444;
+      padding: 6px 10px;
+      background-color: #2a2a2a;
+      margin-bottom: 4px;
+    }
+
+    .rofi-drun .drun.input input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+    }
+
+    .rofi-drun li.app {
+      padding: 6px 10px;
+      background-color: #2a2a2a;
+      border: none;
+    }
+
+    .rofi-drun li.app:nth-child(even) {
+      background-color: #1c1d1d;
+    }
+
+    .rofi-drun li.app:hover,
+    .rofi-drun li.app.selected {
+      background-color: #4b6e46;
+    }
+
+    .rofi-drun li.app span.type {
+      font-style: italic;
+      margin-left: 5px;
+    }
+  </style>
 </head>
 
 <body>
-    <main>
-        <ul class="tiles">
-            <li class="left">
-                <div class="workspace tile">
-                    <span class="label">WS:</span><div class="radio"></div><div class="radio checked"></div><div class="radio"></div><div class="radio"></div>  
-                </div>
-                <div class="server tile">
-                    <span class="label">SRV:</span><span class="value">Online</span>
-                </div>
-            </li>
-            <div class="spacer">
-                <div class="storage">///3%</div>
-            </div>
-            <li class="center">
-                <div class="datentime tile">
-                    <span class="day">10</span><span class="seperator">-</span><span class="time">12:00</span>
-                </div>
-            </li>
-            <div class="spacer"></div>
-            <li class="right">
-                <div class="vol tile">
-                    <span class="label">VOL:</span><span class="value">75%</span>
-                </div>
-                <div class="ram tile">
-                    <span class="label">RAM:</span><span class="value">13%</span>
-                </div>
-                <div class="cpu tile">
-                    <span class="label">CPU:</span><span class="value">5%</span>
-                </div>
-                <div class="internet tile">
-                    <span class="label">IP:</span><span class="value">198.168.1.5</span>
-                </div>
-                <div class="power-opt tile">
-                    <span class="button">⏻</span>
-                </div>
-            </li>
-        </ul>
-    </main>
-    <div class="desktop">
-        <img class="wallpaper" src="/linux/background/grain.png">
-        <div class="content">
-            <span>hello world!</span>
+  <main>
+    <ul class="tiles">
+      <li class="left">
+        <div class="workspace tile">
+          <span class="label">WS:</span>
+          <div class="radio"></div>
+          <div class="radio checked"></div>
+          <div class="radio"></div>
+          <div class="radio"></div>
         </div>
+        <div class="server tile">
+          <span class="label">SRV:</span><span class="value">Online</span>
+        </div>
+      </li>
+
+      <li class="center">
+        <div class="datentime tile">
+          <span class="day">10</span><span class="seperator">-</span><span class="time">12:00</span>
+        </div>
+      </li>
+
+      <li class="right">
+        <div class="vol tile">
+          <span class="label">VOL:</span><span class="value">75%</span>
+        </div>
+        <div class="ram tile">
+          <span class="label">RAM:</span><span class="value">13%</span>
+        </div>
+        <div class="cpu tile">
+          <span class="label">CPU:</span><span class="value">5%</span>
+        </div>
+        <div class="internet tile">
+          <span class="label">IP:</span><span class="value">198.168.1.5</span>
+        </div>
+        <div class="power-opt tile">
+          <span class="button">⏻</span>
+        </div>
+      </li>
+    </ul>
+  </main>
+
+  <div class="desktop">
+    <img class="wallpaper" src="/linux/background/grain.png" alt="Background" />
+    <div class="content">
+      <div class="terminal"><img src="./manjaro.png" alt="Terminal" /></div>
+
+      <!-- Stock Rofi Drun Look -->
+      <div class="rofi-drun">
+        <ul>
+          <li class="drun input"><input type="text" value="drun:" /></li>
+          <li class="app selected"><span>kitty</span><span class="type">(Terminal Emulator)</span></li>
+          <li class="app"><span>LibreOffice Calc</span><span class="type">(Spreadsheet)</span></li>
+          <li class="app"><span>HexChat</span><span class="type">(IRC Client)</span></li>
+          <li class="app"><span>Inkscape</span><span class="type">(Vector Graphics Editor)</span></li>
+          <li class="app"><span>Tor Browser</span><span class="type">(Web Browser)</span></li>
+          <li class="app"><span>Leafpad</span></li>
+          <li class="app"><span>Text Editor</span></li>
+          <li class="app"><span>Brave</span><span class="type">(Web Browser)</span></li>
+          <li class="app"><span>0 A.D.</span></li>
+          <li class="app"><span>Customize Look and Feel</span><span class="type">(Customize Look and Feel)</span></li>
+        </ul>
+      </div>
     </div>
+  </div>
 </body>
 
 </html>
